@@ -5,13 +5,12 @@ import 'package:move_app/domain/entities/no_params.dart';
 import 'package:move_app/domain/repositories/movie_repositories.dart';
 import 'package:move_app/domain/usecases/usecases.dart';
 
-class GetTrending extends UseCases<List<MovieEntity>, NoParams> {
+class GetComingSoon extends UseCases<List<MovieEntity>, NoParams> {
   final MovieRepository repository;
 
-  GetTrending(this.repository);
-
+  GetComingSoon(this.repository);
   @override
   Future<Either<AppError, List<MovieEntity>>> call(NoParams noParams) async {
-    return await repository.getTrending();
+    return await repository.getComingSoon();
   }
 }
